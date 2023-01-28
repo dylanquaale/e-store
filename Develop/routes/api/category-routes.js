@@ -3,8 +3,8 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 //find all categories
-  // be sure to include its associated Products
-
+  // be sure to include its associated Product
+  // took from 11-Ins_RESTful-Routes
 router.get('/', async (req, res) => {
   try {
     const categoryData = await Category.findAll({
@@ -18,34 +18,68 @@ router.get('/', async (req, res) => {
 
  // find one category by its `id` value
   // be sure to include its associated Products
-
+  // took from 11-Ins_RESTful-Routes
 router.get('/:id', async (req, res) => {
   try {
-    const driverData = await Driver.findByPk(req.params.id, {
-      include: [{ model: License }, { model: Car }],
+    const categoryData = await Category.findByPk(req.params.id, {
+        include: Product
     });
-
-    if (!driverData) {
-      res.status(404).json({ message: 'No driver found with that id!' });
+    if (!categoryData) {
+      res.status(404).json({ message: 'Category not found!' });
       return;
     }
 
-    res.status(200).json(driverData);
+    res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.post('/', (req, res) => {
-  // create a new category
+// create a new category
+// took from 11-Ins_RESTful-Routes
+router.post('/', async (req, res) => {
+  try {
+    const categoryData = await Category.update(req.body)
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-router.put('/:id', (req, res) => {
-  // update a category by its `id` value
+ // update a category by its `id` value
+ // took from 17-Ins_Hooks
+router.put('/:id', async (req, res) => {
+  try {
+    const categoryData = await Category.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+      individualHooks: true
+    });
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
+  // took from 07-Ins_Update-Delete
+router.delete('/:id', async (req, res) => {
+  try {
+    const categoryData = await Category.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if (!categoryData) {
+      res.status(404).json({ message: 'no category found!' });
+     
+    }
+    es.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err)
+  }
 });
 
 module.exports = router;
