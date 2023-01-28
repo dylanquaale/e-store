@@ -7,10 +7,10 @@ const { Category, Product } = require('../../models');
   // took from 11-Ins_RESTful-Routes
 router.get('/', async (req, res) => {
   try {
-    const categoryData = await Category.findAll({
-      include: [{ include: categoryData }],
+    const catData = await Category.findAll({
+      include: Product ,
     });
-    res.status(200).json(categoryData);
+    res.status(200).json(catData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -21,15 +21,15 @@ router.get('/', async (req, res) => {
   // took from 11-Ins_RESTful-Routes
 router.get('/:id', async (req, res) => {
   try {
-    const categoryData = await Category.findByPk(req.params.id, {
+    const catData = await Category.findByPk(req.params.id, {
         include: Product
     });
-    if (!categoryData) {
+    if (!catData) {
       res.status(404).json({ message: 'Category not found!' });
       return;
     }
 
-    res.status(200).json(categoryData);
+    res.status(200).json(catData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,8 +39,8 @@ router.get('/:id', async (req, res) => {
 // took from 11-Ins_RESTful-Routes
 router.post('/', async (req, res) => {
   try {
-    const categoryData = await Category.update(req.body)
-    res.status(200).json(categoryData);
+    const catData = await Category.update(req.body)
+    res.status(200).json(catData);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -50,13 +50,13 @@ router.post('/', async (req, res) => {
  // took from 17-Ins_Hooks
 router.put('/:id', async (req, res) => {
   try {
-    const categoryData = await Category.update(req.body, {
+    const catData = await Category.update(req.body, {
       where: {
         id: req.params.id,
       },
       individualHooks: true
     });
-    res.status(200).json(categoryData);
+    res.status(200).json(catData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -66,17 +66,17 @@ router.put('/:id', async (req, res) => {
   // took from 07-Ins_Update-Delete
 router.delete('/:id', async (req, res) => {
   try {
-    const categoryData = await Category.destroy({
+    const catData = await Category.destroy({
       where: {
         id: req.params.id
       }
     });
 
-    if (!categoryData) {
+    if (!catData) {
       res.status(404).json({ message: 'no category found!' });
      
     }
-    es.status(200).json(categoryData);
+    res.status(200).json(catData);
   } catch (err) {
     res.status(500).json(err)
   }
