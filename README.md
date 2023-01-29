@@ -23,9 +23,10 @@
 
     https://github.com/jpd61/e-commerce-backend,
 
-    https://rdevans87.github.io/ORM-ECommerce-BackEnd/
-    
+    https://rdevans87.github.io/ORM-ECommerce-BackEnd/,
 
+    https://github.com/kristermyr
+    
   ## Installation
     npm i 
 
