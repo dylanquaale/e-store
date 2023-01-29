@@ -11,11 +11,11 @@
       
   - [Credits](#credits)
 
-    03=Stu_Models,
+    03-Stu_Models,
 
     07-Ins_Update-Delete,
 
-    09--Ins_ASYNC-Await,
+    09-Ins_ASYNC-Await,
 
     11-Ins_RESTful-Routes,
 
