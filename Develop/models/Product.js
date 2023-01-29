@@ -39,7 +39,7 @@ Product.init(
     category_id: {
       type: INTEGER,
       references: {
-        model: 'Category',
+        model: 'category',
         key: 'id',
       },
     },
