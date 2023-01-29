@@ -10,6 +10,9 @@
   - [Usage](#usage)
       
   - [Credits](#credits)
+
+    03=Stu_Models,
+
     07-Ins_Update-Delete,
 
     09--Ins_ASYNC-Await,
@@ -18,6 +21,9 @@
 
     17-Ins_Hooks,
 
+    https://github.com/jpd61/e-commerce-backend,
+
+    https://rdevans87.github.io/ORM-ECommerce-BackEnd/
     
 
   ## Installation
