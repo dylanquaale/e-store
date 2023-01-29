@@ -56,3 +56,4 @@ Product.init(
 );
 
 module.exports = Product;
+// all good
