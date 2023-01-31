@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
   })
 
-    .then(tagData => res.json(tagData))
+    .then(tagIdData => res.json(tagIdData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -33,7 +33,7 @@ router.get('/:id', async (req, res) => {
     }
   })
 
-    .then(tagData => res.json(tagData))
+    .then(tagIdData => res.json(tagIdData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
     tags_name: req.body.tags_name
   })
 
-    .then(tagData => res.json(tagData))
+    .then(tagIdData => res.json(tagIdData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -59,12 +59,12 @@ router.put('/:id', async (req, res) => {
     }
   })
 
-    .then(tagData => {
-      if (!tagData){
+    .then(tagIdData => {
+      if (!tagIdData){
         res.status(404).json({message:'NO PRODUCT TAG FOUND'});
         return;
       }
-      res.json(tagData);
+      res.json(tagIdData);
     })
 
     .catch(err => {
@@ -80,12 +80,12 @@ router.delete('/:id', async(req, res) => {
       id: req.params.id
     }
   })
-  .then(tagData => {
-    if (!tagData) {
+  .then(tagIdData => {
+    if (!tagIdData) {
       res.status(404).json({message: 'No PRODUCT TAG FOUND'});
       return;
     }
-    res.json(tagData);
+    res.json(tagIdData);
   })
 
   .catch(err =>{
