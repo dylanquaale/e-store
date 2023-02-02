@@ -1,12 +1,13 @@
 # 13 Object-Relational Mapping (ORM): E-Commerce Back End
 
-  # employee-tracker
-
   ## Description
-    
+    You are able to update, delete, create everything you need to in order to run your Ecommerce stores Back End.
   ## Table of Contents
   - [Installation](#installation)
-  
+  mysql -u root -p
+  npm i 
+  npm run seed
+  npm start
   - [Usage](#usage)
       
   - [Credits](#credits)
@@ -34,9 +35,6 @@
 
   ## Contributing
     Go to my github unzip and download the file 
-
-  ## Tests
-    npm tests
 
   ## Questions
     Any questions should be directed to my email dylanquaale33@gmail.com
