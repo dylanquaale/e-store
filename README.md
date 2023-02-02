@@ -4,9 +4,12 @@
     You are able to update, delete, create everything you need to in order to run your Ecommerce stores Back End.
   ## Table of Contents
   - [Installation](#installation)
-  mysql -u root -p
-  npm i 
-  npm run seed
+  mysql -u root -p,
+
+  npm i,
+
+  npm run seed,
+  
   npm start
   - [Usage](#usage)
       
