@@ -9,10 +9,10 @@
   npm i,
 
   npm run seed,
-  
+
   npm start
   - [Usage](#usage)
-      
+      Maintain your stores backend
   - [Credits](#credits)
 
     03-Stu_Models,
